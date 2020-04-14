@@ -7,6 +7,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
 
+
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
@@ -26,8 +27,10 @@
     
 
     <script type="text/javascript">
+
+        console.log(window.origin)
     
-        var socket = io('http://10.0.0.135:3000')
+        var socket = io(window.origin)
 
         socket.on('receivedNewMessage', function(data) {
             console.log('exec receivedNewMessage')
