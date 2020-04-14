@@ -1,0 +1,19 @@
+{
+  "name": "online-chat_test",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/dioneijd/online-chat_test.git",
+  "author": "Dionei J. Delangolo <dionei.jd@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon server.js"
+  },
+  "dependencies": {
+    "ejs": "^3.0.2",
+    "express": "^4.17.1",
+    "socket.io": "^2.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.3"
+  }
+}
