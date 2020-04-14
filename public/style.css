@@ -28,7 +28,7 @@ input {
   padding-left: 20px;
   font-size: 20px;
   color: #E02041;
-  box-shadow: 2px 2px 3px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
 }
 input::placeholder{
   color: rgb(241, 181, 181);
@@ -45,10 +45,9 @@ button {
   border-radius: 5px;
   margin-bottom: 20px;
   cursor: pointer;
-  box-shadow: 2px 2px 3px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
 
 }
-
 button:hover {
   opacity: 80%;
   border: 1px solid #E02041;
@@ -75,17 +74,46 @@ button:hover {
   margin-bottom: 20px;
   background-color: white;
   padding: 20px;
-  box-shadow: 2px 2px 3px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+  overflow: auto; 
 }
 
-#chat .messages .message {
-  color: rgb(70, 69, 69);
-  margin-bottom: 5px;
+#chat .messages::-webkit-scrollbar {
+  width: 10px;
+}
 
+#chat .messages::-webkit-scrollbar-thumb {
+  background: #E02041;
+  border-radius: 5px;
+}
+
+
+
+
+#chat .messages .message {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
 }
 
 #chat .messages .message strong{
   color: #E02041;
+  margin-right: 10px;
+}
+
+#chat .messages .message div{
+  width: auto;
+  min-width: 200px;
+  min-height: 40px;
+  margin-top: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  border-radius: 0px 15px 15px 15px;
+  color: rgb(70, 69, 69);
+  background-color: rgba(224, 32, 64, 0.1);
+  border: 1px solid #E02041;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
 }
 
 
@@ -95,7 +123,6 @@ button:hover {
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
-
 }
 
 #chat #sender input {
