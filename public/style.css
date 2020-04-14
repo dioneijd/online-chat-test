@@ -67,7 +67,7 @@ button:hover {
 }
 
 #chat .messages {
-  min-height: 300px;
+  min-height: 150px;
   height: 100%;
   width: 100%;
   border: 1px solid #ddd;

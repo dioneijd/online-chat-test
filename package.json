@@ -6,11 +6,14 @@
   "author": "Dionei J. Delangolo <dionei.jd@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon server.js"
+    "dev": "nodemon server.js",
+    "start": "node src/server.js"
   },
   "dependencies": {
     "ejs": "^3.0.2",
     "express": "^4.17.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "socket.io": "^2.3.0"
   },
   "devDependencies": {
