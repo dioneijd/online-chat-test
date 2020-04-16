@@ -1,27 +1,31 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap');
 
-html, body {
-  height: 100%;
-  width: 100%;
-  background-color: #f0f0f5;
-  padding: 10px;
-  display: flex;
-  justify-content: center;
-  -webkit-font-smoothing: antialiased;
-}
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: roboto;
+}
 
+html, body {
+  height: 100%;
+  width: 100%;
+  background-color: #f0f0f5;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background-image: url('./assets/grid-light.png');
 }
 
 input {
   min-height: 50px;
   width: 100%;
-  border: 1px solid #ddd;
+  border: 2px solid transparent;
   border-radius: 5px;
   margin-bottom: 20px;
   padding: 10px;
@@ -33,24 +37,30 @@ input {
 input::placeholder{
   color: rgb(241, 181, 181);
 }
-
+input:focus{
+  border: solid 2px #E02041;
+  outline: none;
+}
 
 button {
   height: 50px;
   min-width: 70px;
   background-color: #E02041;
+  border: 2px solid transparent;
   color: white;
   font-weight: bold;
-  border: 1px solid #ddd;
   border-radius: 5px;
   margin-bottom: 20px;
   cursor: pointer;
   box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
-
 }
 button:hover {
   opacity: 80%;
-  border: 1px solid #E02041;
+  border: 2px solid rgb(133, 17, 36);
+}
+button:focus {  
+  border: 2px solid rgb(133, 17, 36);
+  outline: none;
 }
 
 
@@ -63,13 +73,14 @@ button:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  border: 1px solid transparent;
+  padding: 10px;
 }
 
 #chat .messages {
   min-height: 150px;
   height: 100%;
   width: 100%;
-  border: 1px solid #ddd;
   border-radius: 5px;
   margin-bottom: 20px;
   background-color: white;
@@ -96,9 +107,12 @@ button:hover {
   margin-bottom: 10px;
 }
 
+#chat .messages .message + .myMessage{
+  flex-direction: row-reverse;
+}
+
 #chat .messages .message strong{
   color: #E02041;
-  margin-right: 10px;
 }
 
 #chat .messages .message div{
@@ -106,6 +120,7 @@ button:hover {
   min-width: 200px;
   min-height: 40px;
   margin-top: 5px;
+  margin-left: 10px;
   padding-left: 10px;
   padding-right: 10px;
   padding-top: 5px;
@@ -114,6 +129,21 @@ button:hover {
   background-color: rgba(224, 32, 64, 0.1);
   border: 1px solid #E02041;
   box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+#chat .messages .message + .myMessage div{
+  border-radius: 15px 0 15px 15px;
+  margin-left: 0px;
+  margin-right: 10px;
+  text-align: end;
+}
+
+
+
+
+
+#chat .messages .message div{
+
 }
 
 

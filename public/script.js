@@ -1,4 +1,12 @@
+
 var socket = io(window.origin)
+
+
+
+
+socket.on('connect', function(data){
+    localStorage.setItem('mySocket_id', socket.id)
+})
 
 socket.on('receivedNewMessage', function(data) {
     console.log('exec receivedNewMessage')
@@ -16,18 +24,27 @@ socket.on('previousMessages', function(messages) {
 
 
 
-
 function renderMessages(message){
     const messages = document.querySelector('.messages')
+    const mySocket_id = localStorage.getItem('mySocket_id')
+    let msg = ''
 
-    const msg = `
-        <div class="message">
-            <strong>${message.author}</strong>
-            <div>${message.message}</div>      
-        </div>`
-
+    if (message.socket_id != mySocket_id){
+        msg = `
+            <div class="message">
+                <strong>${message.author}</strong>
+                <div>${message.message}</div>      
+            </div>
+        `
+    } else {
+        msg = `
+            <div class="message myMessage">
+                <strong>${message.author}</strong>
+                <div>${message.message}</div>      
+            </div>
+        `
+    }
     messages.innerHTML += msg
-
 }
 
 
@@ -38,10 +55,10 @@ function handleSendMessage(event){
     const authorObj = document.querySelector('#username')
     const messageObj = document.querySelector('#message')
 
-
     if (authorObj.value && messageObj.value) {
 
         const msgObj = {
+                socket_id: socket.id,
                 author: authorObj.value,
                 message: messageObj.value
             }
@@ -54,6 +71,12 @@ function handleSendMessage(event){
 
     }
 }
+
+
+function handleStoreName(e){
+    console.log(e)
+}
+
 
 
 function makeBeep(){
