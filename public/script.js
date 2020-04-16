@@ -1,6 +1,11 @@
-
 var socket = io(window.origin)
 
+
+
+if (sessionStorage.getItem('mySessionName')) {
+    const username = document.querySelector('#username')
+    username.value = sessionStorage.getItem('mySessionName')
+}
 
 
 
@@ -74,7 +79,7 @@ function handleSendMessage(event){
 
 
 function handleStoreName(e){
-    console.log(e)
+    sessionStorage.setItem('mySessionName', e.target.value)
 }
 
 

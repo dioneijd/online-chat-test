@@ -11,12 +11,12 @@
 <body>
 
     <div id="chat">
-        <input type="text" name="username" id="username" onchange=handleStoreName(event) placeholder="Digite seu nome">
+        <input type="text" name="username" id="username" onchange=handleStoreName(event) placeholder="Digite seu nome"/>
 
         <div class="messages"></div>
         
         <div id="sender">
-            <input type="text" name="message" id="message" oninput=handleStoreName(event) placeholder="Digite sua mensagem">
+            <input type="text" name="message" id="message" placeholder="Digite sua mensagem" autocomplete="off"/>
             <button type="submit" onclick="handleSendMessage(event)">Enviar</button>
         </div>
 
